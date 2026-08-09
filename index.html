@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Q3 - Student Table with Edit/Delete</title>
+<title>Events Practice - JavaScript</title>
 </head>
 <body>
+
+<h1>Question 1: Signup Form</h1>
+
+<form id="signupForm">
+  <label>Full Name: <input type="text" id="fullName" required></label><br><br>
+  <label>Email: <input type="email" id="signupEmail" required></label><br><br>
+  <label>Password: <input type="password" id="signupPassword" required></label><br><br>
+  <label>Confirm Password: <input type="password" id="confirmPassword" required></label><br><br>
+  <button type="submit">Sign Up</button>
+</form>
+
+<h3>Submitted Data:</h3>
+<div id="signupOutput"></div>
+
+
+<hr><hr>
+
+
+<h1>Question 2: Read More</h1>
+
+<div class="item">
+  <h3>Item 1: Wireless Headphones</h3>
+  <p>Price: $50, Brand: SoundMax</p>
+  <p class="full-detail" style="display:none;">
+    Full Detail: Bluetooth 5.0, 20 hours battery life, noise cancellation,
+    available in black and white, 1 year warranty.
+  </p>
+  <button class="read-more-btn">Read more</button>
+</div>
+
+<br>
+
+<div class="item">
+  <h3>Item 2: Office Chair</h3>
+  <p>Price: $120, Brand: ComfortSit</p>
+  <p class="full-detail" style="display:none;">
+    Full Detail: Ergonomic design, adjustable height, lumbar support,
+    breathable mesh back, weight capacity 120kg, 2 year warranty.
+  </p>
+  <button class="read-more-btn">Read more</button>
+</div>
+
+<br>
+
+<div class="item">
+  <h3>Item 3: Coffee Maker</h3>
+  <p>Price: $35, Brand: BrewFast</p>
+  <p class="full-detail" style="display:none;">
+    Full Detail: 12-cup capacity, auto shut-off, reusable filter,
+    programmable timer, 6 months warranty.
+  </p>
+  <button class="read-more-btn">Read more</button>
+</div>
+
+
+<hr><hr>
+
+
+<h1>Question 3: Student Table with Edit/Delete</h1>
 
 <h2>Add Student</h2>
 
@@ -15,8 +74,6 @@
   <button type="submit">Add Student</button>
 </form>
 
-<hr>
-
 <h2 id="editFormTitle" style="display:none;">Edit Student</h2>
 
 <form id="editForm" style="display:none;">
@@ -26,8 +83,6 @@
   <button type="submit">Update Student</button>
   <button type="button" id="cancelEditBtn">Cancel</button>
 </form>
-
-<hr>
 
 <h2>Student List</h2>
 
@@ -43,6 +98,7 @@
   </thead>
   <tbody id="studentTableBody"></tbody>
 </table>
+
 
 <script src="script.js"></script>
 </body>

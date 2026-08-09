@@ -1,3 +1,61 @@
+/* =========================================================
+   QUESTION 1
+   Signup form - display form data in the page on submission
+   ========================================================= */
+
+const signupForm = document.getElementById("signupForm");
+const signupOutput = document.getElementById("signupOutput");
+
+signupForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const fullName = document.getElementById("fullName").value;
+  const email = document.getElementById("signupEmail").value;
+  const password = document.getElementById("signupPassword").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password !== confirmPassword) {
+    signupOutput.innerHTML = "<p>Passwords do not match. Please try again.</p>";
+    return;
+  }
+
+  signupOutput.innerHTML = `
+    <p>Full Name: ${fullName}</p>
+    <p>Email: ${email}</p>
+    <p>Password: ${password}</p>
+  `;
+
+  signupForm.reset();
+});
+
+
+/* =========================================================
+   QUESTION 2
+   Content area with items - "Read more" reveals full detail
+   ========================================================= */
+
+const readMoreButtons = document.querySelectorAll(".read-more-btn");
+
+readMoreButtons.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const fullDetail = btn.previousElementSibling;
+
+    if (fullDetail.style.display === "none") {
+      fullDetail.style.display = "block";
+      btn.textContent = "Read less";
+    } else {
+      fullDetail.style.display = "none";
+      btn.textContent = "Read more";
+    }
+  });
+});
+
+
+/* =========================================================
+   QUESTION 3
+   Student table - Add / Edit / Delete
+   ========================================================= */
+
 let students = [];
 let editingIndex = null;
 
